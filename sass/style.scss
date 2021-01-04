@@ -1,0 +1,144 @@
+#Wishes {
+    background: radial-gradient(#493c29, #242223);
+    h1 {
+        span {
+            font-size: 52px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+        color: #ffffff;
+        font-weight: 300;
+        font-size: 22px;
+        letter-spacing: 2px;
+        color: #b5a06d;
+        
+    }
+    h2 {
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.4;
+        span {
+            color: #b5a06d;
+        }
+    }
+    .logo-beys {
+        margin: 84px auto 120px;
+        height: auto;
+        a {
+            background: url(../images/logo.svg) no-repeat center;
+            cursor: inherit; 
+        }
+    }
+}
+
+$anime-time: 8s;
+
+
+.container {
+    height: 100vh;
+    .illu_1 {
+        animation: Illu $anime-time linear;
+        animation-iteration-count: infinite;
+        position: relative;
+        .main_1 {
+            background: url(../images/main_1.png) no-repeat center right;
+            background-size: 60vh auto;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            width: 50%;
+            animation: Main1 .8s linear;
+        }
+        .main_2 {
+            background: url(../images/main_2.png) no-repeat center left;
+            background-size: 60vh auto;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            width: 50%;
+            animation: Main2 .8s linear;
+        }
+    }
+}
+
+@keyframes Illu {
+    0%, 
+    100% {
+        background: url(../images/illu_1.png) no-repeat center;
+        background-size: auto 100%;
+        height: 65vh;
+    }
+    50%{
+        background: url(../images/illu_2.png) no-repeat center;
+        background-size: auto 100%;
+        height: 65vh;
+    }
+}
+@keyframes Main1 {
+    0% {
+        left: -10px;
+        top: 10px;
+    }
+    100%{
+        left: 0px;
+        top: 0;
+    }
+}
+@keyframes Main2 {
+    0% {
+        right: -10px;
+        top: 10px;
+    }
+    100%{
+        right: 0px;
+        top: 0;
+    }
+}
+
+  
+a.scroll {
+    color: var(--title);
+    position: absolute;
+    padding: 4px 4px 60px 4px;
+    font-weight: 600;
+    margin-top: 52px;
+    font-size: 12px;
+    color: #ffffff;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    &:hover {
+        text-decoration: none;
+        &::after {
+            height: 52px;
+            transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -ms-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+    }
+    &:focus {
+        background: none !important;
+        &::after{
+            background: #b5a06d;
+        } 
+    }
+    &::after {
+        content: "";
+        height: 20px;
+        width: 2px;
+        border-radius: 2px;
+        background: #b5a06d;
+        position: absolute;
+        left: 50%;
+        top: 32px;
+        margin-left: -1px;
+        transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -ms-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+}
